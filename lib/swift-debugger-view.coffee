@@ -7,8 +7,8 @@ spawn = require('child_process').spawn
 path = require 'path'
 module.exports =
 class SwiftDebuggerView extends View
-  executableFileName: null
-  swiftPath: null
+  executableFileName: "main"
+  swiftPath: "/home/aschoerk/bin/swift-3.0/usr/bin"
 
   @content: ->
     @div class: 'swiftDebuggerView', =>
@@ -99,8 +99,8 @@ class SwiftDebuggerView extends View
   askForPaths: ->
     if @pathsNotSet()
       @addOutput("Please enter executable and swift path using e=nameOfExecutable then p=path/to/swift")
-      @addOutput("Example e=helloWorld")
-      @addOutput("Example p=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin")
+      @addOutput("Example e=main")
+      @addOutput("Example p=/home/aschoerk/bin/swift-3.0/usr/bin")
 
   initialize: (breakpointStore) ->
     @breakpointStore = breakpointStore
